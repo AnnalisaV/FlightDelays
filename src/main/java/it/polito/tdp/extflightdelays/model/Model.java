@@ -55,10 +55,10 @@ public class Model {
                                                       }           
 				                                    */
 			}
-		
+		}
 		
 		for (Rotta r : dao.getRotte(idMapAirport)) {
-			//controllo che i vertici siano nel grafo
+			//controllo che i vertici siano nel grafo visto che il dao mi da' tutte le possibili connessioni
 	if(this.grafo.containsVertex(r.getPartenza()) && this.grafo.containsVertex(r.getDestinazione())) {
 			DefaultWeightedEdge e= this.grafo.getEdge(r.getPartenza(), r.getDestinazione()); 
 			if(e==null) {
@@ -75,7 +75,7 @@ public class Model {
 		}
 		
 	}
-		}
+		
 	}
 
 	public int vertexNumber() {
